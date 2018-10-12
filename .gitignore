@@ -61,3 +61,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 *.lock
+Lopul Bodon Logger/Temp/UnityLockfile
+Lopul Bodon Logger/Library/EditorInstance.json

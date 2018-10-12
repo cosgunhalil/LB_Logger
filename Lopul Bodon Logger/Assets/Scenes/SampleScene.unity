@@ -175,6 +175,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &203907740
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4199112427134530, guid: 00be51153e41441318998cc247e9f105, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199112427134530, guid: 00be51153e41441318998cc247e9f105, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199112427134530, guid: 00be51153e41441318998cc247e9f105, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199112427134530, guid: 00be51153e41441318998cc247e9f105, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199112427134530, guid: 00be51153e41441318998cc247e9f105, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199112427134530, guid: 00be51153e41441318998cc247e9f105, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199112427134530, guid: 00be51153e41441318998cc247e9f105, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199112427134530, guid: 00be51153e41441318998cc247e9f105, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00be51153e41441318998cc247e9f105, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +508,12 @@ Prefab:
     - target: {fileID: 224332209170095156, guid: 6363d82500ca37a4083ef009ccc7209d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000015258789
+      value: 0.000038146973
+      objectReference: {fileID: 0}
+    - target: {fileID: 224332209170095156, guid: 6363d82500ca37a4083ef009ccc7209d,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -240.95589
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6363d82500ca37a4083ef009ccc7209d, type: 2}
