@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class LB_Logger
 {
-
     private static readonly LB_Logger instance = new LB_Logger();
 
     static LB_Logger()
