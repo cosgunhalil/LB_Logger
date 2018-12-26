@@ -27,7 +27,8 @@ public class LB_Logger
     }
 
     public delegate void PrintLogDelegate(string log);
-    public event PrintLogDelegate PrintLogEvent;
+    public event PrintLogDelegate OnLogAdded;
+    public event PrintLogDelegate OnLogPrinted;
 
     private string logString = String.Empty;
 
@@ -39,9 +40,14 @@ public class LB_Logger
         }
         logString += log;
 
-        if (PrintLogEvent != null)
+        if (OnLogAdded != null)
         {
-            PrintLogEvent(logString);
+            OnLogAdded(logString);
+        }
+
+        if (OnLogPrinted != null)
+        {
+            OnLogPrinted(log);
         }
     }
 

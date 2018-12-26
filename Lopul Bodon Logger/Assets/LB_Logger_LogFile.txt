@@ -26,3 +26,45 @@ Pressed key is A
 Pressed key is A
 Pressed key is A
 ----------------
+12/26/2018 21:36:31
+----------------
+Logger Object Awake
+Logger Object Enable
+Logger Object Start
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+----------------
+12/26/2018 21:42:50
+----------------
+Logger Object Awake
+Logger Object Enable
+Logger Object Start
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+Pressed key is A
+----------------

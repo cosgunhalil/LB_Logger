@@ -1,20 +1,33 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class LB_LoggerMonitor : MonoBehaviour {
 
     public TMPro.TextMeshProUGUI LogTextContainer;
 
-	void OnEnable ()
+    private static LB_LoggerMonitor instance;
+
+    private void Awake()
     {
-        LB_Logger.Instance.PrintLogEvent += MonitorLog;
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+
+        instance = this;
+    }
+
+    void OnEnable ()
+    {
+        LB_Logger.Instance.OnLogAdded += MonitorLog;
 	}
 
     private void OnDisable()
     {
-        LB_Logger.Instance.PrintLogEvent -= MonitorLog;
+        LB_Logger.Instance.OnLogAdded -= MonitorLog;
     }
 
     private void MonitorLog(string log)
