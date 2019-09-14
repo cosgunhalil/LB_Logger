@@ -40,7 +40,10 @@ namespace Helpers.Logger
 
         public void PrintLog(string log, LogType logType)
         {
-            OnLogPrint?.Invoke(log, logType);
+            if (logFilter[logType])
+            {
+                OnLogPrint?.Invoke(log, logType);
+            }
         }
 
         public void SetLogFilter(LogType logType, bool isVisible)
