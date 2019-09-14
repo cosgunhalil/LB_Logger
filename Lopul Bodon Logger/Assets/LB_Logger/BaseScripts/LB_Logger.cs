@@ -2,6 +2,7 @@
 namespace Helpers.Logger
 {
     using System;
+    using System.Collections.Generic;
 
     public class LB_Logger
     {
@@ -26,27 +27,18 @@ namespace Helpers.Logger
         }
 
         public delegate void PrintLogDelegate(string log);
-        public event PrintLogDelegate OnLogAdded;
-        public event PrintLogDelegate OnLogPrinted;
+        public event PrintLogDelegate OnLogPrint;
 
         private string logString = String.Empty;
+        private Queue<string> logQueue = new Queue<string>();
 
         public void PrintLog(string log)
         {
-            if (logString != string.Empty)
-            {
-                logString += Environment.NewLine;
-            }
-            logString += log;
+            logQueue.Enqueue(log);
 
-            if (OnLogAdded != null)
+            if (OnLogPrint != null)
             {
-                OnLogAdded(logString);
-            }
-
-            if (OnLogPrinted != null)
-            {
-                OnLogPrinted(log);
+                OnLogPrint(log);
             }
         }
 

@@ -25,12 +25,12 @@ namespace Helpers.Logger
 
         void OnEnable()
         {
-            LB_Logger.Instance.OnLogAdded += MonitorLog;
+            LB_Logger.Instance.OnLogPrint += MonitorLog;
         }
 
         private void OnDisable()
         {
-            LB_Logger.Instance.OnLogAdded -= MonitorLog;
+            LB_Logger.Instance.OnLogPrint -= MonitorLog;
         }
 
         private void MonitorLog(string log)

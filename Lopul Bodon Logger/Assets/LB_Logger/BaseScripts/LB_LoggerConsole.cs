@@ -9,12 +9,12 @@ namespace Helpers.Logger
         private void Awake()
         {
             DeleteOtherConsoleLoggers();
-            LB_Logger.Instance.OnLogPrinted += PrintLogToConsole;
+            LB_Logger.Instance.OnLogPrint += PrintLogToConsole;
         }
 
         private void OnDestroy()
         {
-            LB_Logger.Instance.OnLogPrinted -= PrintLogToConsole;
+            LB_Logger.Instance.OnLogPrint -= PrintLogToConsole;
         }
 
         private void DeleteOtherConsoleLoggers()
