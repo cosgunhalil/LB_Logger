@@ -6,25 +6,24 @@ public class SampleLoggerObject : MonoBehaviour {
 
     private void Awake()
     {
-        LB_Logger.Instance.PrintLog("Logger Object Awake");
+        LB_Logger.Instance.PrintLog("Logger Object Awake", Helpers.Logger.LogType.Common);
     }
 
     private void OnEnable()
     {
-        LB_Logger.Instance.PrintLog("Logger Object Enable");
+        LB_Logger.Instance.PrintLog("Logger Object Enable", Helpers.Logger.LogType.Common);
     }
 
     private void Start()
     {
-        LB_Logger.Instance.PrintLog("Logger Object Start");
+        LB_Logger.Instance.PrintLog("Logger Object Start", Helpers.Logger.LogType.Common);
     }
 
-    // Update is called once per frame
     void Update () {
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            LB_Logger.Instance.PrintLog("Pressed key is A");
+            LB_Logger.Instance.PrintLog("Pressed key is A", Helpers.Logger.LogType.Common);
         }
 	}
 }

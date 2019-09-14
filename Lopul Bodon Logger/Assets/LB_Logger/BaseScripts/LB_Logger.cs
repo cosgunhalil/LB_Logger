@@ -26,27 +26,23 @@ namespace Helpers.Logger
             }
         }
 
-        public delegate void PrintLogDelegate(string log);
+        public delegate void PrintLogDelegate(string log, LogType logType);
         public event PrintLogDelegate OnLogPrint;
 
-        private string logString = String.Empty;
-        private Queue<string> logQueue = new Queue<string>();
-
-        public void PrintLog(string log)
+        public void PrintLog(string log, LogType logType)
         {
-            logQueue.Enqueue(log);
-
-            if (OnLogPrint != null)
-            {
-                OnLogPrint(log);
-            }
+            OnLogPrint?.Invoke(log, logType);
         }
 
-        public string GetLogString()
-        {
-            return logString;
-        }
+    }
 
+    public enum LogType
+    {
+        UserInterface,
+        Gameplay,
+        Server,
+        Warning,
+        Common
     }
 
 }

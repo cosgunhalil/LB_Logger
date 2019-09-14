@@ -36,7 +36,7 @@ namespace Helpers.Logger
 #endif
         }
 
-        private void AddLog(string log)
+        private void AddLog(string log, LogType logType)
         {
             //todo add log to logHistory - use queue!
         }
@@ -56,7 +56,7 @@ namespace Helpers.Logger
                 {
                     logHistory.Append(DateTime.Now);
                     logHistory.Append(Environment.NewLine + "----------------" + Environment.NewLine);
-                    logHistory.Append(LB_Logger.Instance.GetLogString());
+                    //logHistory.Append(LB_Logger.Instance.GetLogString()); todo get log history
                     logHistory.Append(Environment.NewLine + "----------------" + Environment.NewLine);
                     writer.Write(logHistory);
                 }

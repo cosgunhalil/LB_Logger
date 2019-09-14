@@ -3,7 +3,7 @@ namespace Helpers.Logger
 {
     using UnityEngine;
 
-    public class LB_LoggerConsole : MonoBehaviour
+    public class LB_LogPrinter : MonoBehaviour
     {
 
         private void Awake()
@@ -19,7 +19,7 @@ namespace Helpers.Logger
 
         private void DeleteOtherConsoleLoggers()
         {
-            var consoleLoggers = FindObjectsOfType<LB_LoggerConsole>();
+            var consoleLoggers = FindObjectsOfType<LB_LogPrinter>();
             if (consoleLoggers.Length > 1)
             {
                 for (int i = 1; i < consoleLoggers.Length; i++)
@@ -29,7 +29,7 @@ namespace Helpers.Logger
             }
         }
 
-        private void PrintLogToConsole(string log)
+        private void PrintLogToConsole(string log, LogType logType)
         {
             Debug.Log(log);
         }

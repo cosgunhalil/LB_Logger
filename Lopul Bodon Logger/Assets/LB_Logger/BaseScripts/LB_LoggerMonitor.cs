@@ -5,23 +5,7 @@ namespace Helpers.Logger
 
     public class LB_LoggerMonitor : MonoBehaviour
     {
-
         public TMPro.TextMeshProUGUI LogTextContainer;
-
-        private static LB_LoggerMonitor instance;
-
-        private void Awake()
-        {
-            if (instance != null)
-            {
-                Destroy(this.gameObject);
-                return;
-            }
-
-            DontDestroyOnLoad(this.gameObject);
-
-            instance = this;
-        }
 
         void OnEnable()
         {
@@ -33,7 +17,7 @@ namespace Helpers.Logger
             LB_Logger.Instance.OnLogPrint -= MonitorLog;
         }
 
-        private void MonitorLog(string log)
+        private void MonitorLog(string log, LogType logType)
         {
             LogTextContainer.text = log;
         }
