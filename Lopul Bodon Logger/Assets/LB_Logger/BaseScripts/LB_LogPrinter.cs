@@ -31,7 +31,26 @@ namespace Helpers.Logger
 
         private void PrintLogToConsole(string log, LogType logType)
         {
-            Debug.Log(log);
+            switch (logType)
+            {
+                case LogType.UserInterface:
+                    Debug.Log("<color=#fe2d00>"+ log +"</color>");//todo move color codes to another container
+                    break;
+                case LogType.Gameplay:
+                    Debug.Log("<color=#fe2d00>" + log + "</color>");
+                    break;
+                case LogType.Server:
+                    Debug.Log("<color=#fe2d00>" + log + "</color>");
+                    break;
+                case LogType.Warning:
+                    Debug.Log("<color=#fe2d00>" + log + "</color>");
+                    break;
+                case LogType.Common:
+                    Debug.Log("<color=#fe2d00>" + log + "</color>");
+                    break;
+                default:
+                    break;
+            }
         }
 
     }

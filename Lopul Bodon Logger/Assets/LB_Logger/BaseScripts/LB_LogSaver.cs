@@ -18,6 +18,8 @@ namespace Helpers.Logger
 
         private void LoadLogHistory()
         {
+            logHistory = new StringBuilder();
+
             using (FileStream fs = new FileStream(GetLogFilePath(), FileMode.Open))
             {
                 using (StreamReader reader = new StreamReader(fs))
