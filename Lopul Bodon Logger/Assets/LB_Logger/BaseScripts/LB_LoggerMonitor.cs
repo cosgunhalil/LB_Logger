@@ -1,37 +1,43 @@
 ﻿
-using UnityEngine;
+namespace Helpers.Logger
+{
+    using UnityEngine;
 
-public class LB_LoggerMonitor : MonoBehaviour {
-
-    public TMPro.TextMeshProUGUI LogTextContainer;
-
-    private static LB_LoggerMonitor instance;
-
-    private void Awake()
+    public class LB_LoggerMonitor : MonoBehaviour
     {
-        if (instance != null)
+
+        public TMPro.TextMeshProUGUI LogTextContainer;
+
+        private static LB_LoggerMonitor instance;
+
+        private void Awake()
         {
-            Destroy(this.gameObject);
-            return;
+            if (instance != null)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+
+            DontDestroyOnLoad(this.gameObject);
+
+            instance = this;
         }
 
-        DontDestroyOnLoad(this.gameObject);
+        void OnEnable()
+        {
+            LB_Logger.Instance.OnLogAdded += MonitorLog;
+        }
 
-        instance = this;
+        private void OnDisable()
+        {
+            LB_Logger.Instance.OnLogAdded -= MonitorLog;
+        }
+
+        private void MonitorLog(string log)
+        {
+            LogTextContainer.text = log;
+        }
     }
 
-    void OnEnable ()
-    {
-        LB_Logger.Instance.OnLogAdded += MonitorLog;
-	}
-
-    private void OnDisable()
-    {
-        LB_Logger.Instance.OnLogAdded -= MonitorLog;
-    }
-
-    private void MonitorLog(string log)
-    {
-        LogTextContainer.text = log;
-    }
 }
+

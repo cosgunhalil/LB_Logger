@@ -1,4 +1,5 @@
 ﻿
+using Helpers.Logger;
 using UnityEngine;
 
 public class SampleLoggerObject : MonoBehaviour {

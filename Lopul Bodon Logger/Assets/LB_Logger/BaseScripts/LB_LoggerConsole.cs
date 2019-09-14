@@ -1,35 +1,40 @@
 ﻿
-using System;
-using UnityEngine;
+namespace Helpers.Logger
+{
+    using UnityEngine;
 
-public class LB_LoggerConsole : MonoBehaviour {
-
-    private void Awake()
+    public class LB_LoggerConsole : MonoBehaviour
     {
-        DeleteOtherConsoleLoggers();
-        LB_Logger.Instance.OnLogPrinted += PrintLogToConsole;
-    }
 
-    private void OnDestroy()
-    {
-        LB_Logger.Instance.OnLogPrinted -= PrintLogToConsole;
-    }
-
-    private void DeleteOtherConsoleLoggers()
-    {
-        var consoleLoggers = FindObjectsOfType<LB_LoggerConsole>();
-        if (consoleLoggers.Length > 1)
+        private void Awake()
         {
-            for (int i = 1; i < consoleLoggers.Length ; i++)
+            DeleteOtherConsoleLoggers();
+            LB_Logger.Instance.OnLogPrinted += PrintLogToConsole;
+        }
+
+        private void OnDestroy()
+        {
+            LB_Logger.Instance.OnLogPrinted -= PrintLogToConsole;
+        }
+
+        private void DeleteOtherConsoleLoggers()
+        {
+            var consoleLoggers = FindObjectsOfType<LB_LoggerConsole>();
+            if (consoleLoggers.Length > 1)
             {
-                Destroy(consoleLoggers[i]);
+                for (int i = 1; i < consoleLoggers.Length; i++)
+                {
+                    Destroy(consoleLoggers[i]);
+                }
             }
         }
-    }
 
-    private void PrintLogToConsole(string log)
-    {
-        Debug.Log(log);
+        private void PrintLogToConsole(string log)
+        {
+            Debug.Log(log);
+        }
+
     }
 
 }
+

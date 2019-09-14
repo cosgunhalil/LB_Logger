@@ -1,59 +1,60 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using UnityEngine;
-
-public class LB_Logger
+﻿
+namespace Helpers.Logger
 {
-    private static readonly LB_Logger instance = new LB_Logger();
+    using System;
 
-    static LB_Logger()
+    public class LB_Logger
     {
+        private static readonly LB_Logger instance = new LB_Logger();
 
-    }
-
-    private LB_Logger()
-    {
-
-    }
-
-    public static LB_Logger Instance
-    {
-        get
+        static LB_Logger()
         {
-            return instance;
-        }
-    }
 
-    public delegate void PrintLogDelegate(string log);
-    public event PrintLogDelegate OnLogAdded;
-    public event PrintLogDelegate OnLogPrinted;
-
-    private string logString = String.Empty;
-
-    public void PrintLog(string log)
-    {
-        if (logString != string.Empty)
-        {
-            logString += Environment.NewLine;
-        }
-        logString += log;
-
-        if (OnLogAdded != null)
-        {
-            OnLogAdded(logString);
         }
 
-        if (OnLogPrinted != null)
+        private LB_Logger()
         {
-            OnLogPrinted(log);
-        }
-    }
 
-    public string GetLogString()
-    {
-        return logString;
+        }
+
+        public static LB_Logger Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+        public delegate void PrintLogDelegate(string log);
+        public event PrintLogDelegate OnLogAdded;
+        public event PrintLogDelegate OnLogPrinted;
+
+        private string logString = String.Empty;
+
+        public void PrintLog(string log)
+        {
+            if (logString != string.Empty)
+            {
+                logString += Environment.NewLine;
+            }
+            logString += log;
+
+            if (OnLogAdded != null)
+            {
+                OnLogAdded(logString);
+            }
+
+            if (OnLogPrinted != null)
+            {
+                OnLogPrinted(log);
+            }
+        }
+
+        public string GetLogString()
+        {
+            return logString;
+        }
+
     }
 
 }

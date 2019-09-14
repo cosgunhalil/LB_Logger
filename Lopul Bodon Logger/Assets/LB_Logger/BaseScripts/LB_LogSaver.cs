@@ -1,52 +1,58 @@
-﻿using System;
-using System.IO;
-using UnityEngine;
+﻿
+namespace Helpers.Logger
+{
+    using System;
+    using System.IO;
+    using UnityEngine;
 
-public class LB_LogSaver : MonoBehaviour {
-
-    private string logFilePath;
-
-    private string logHistory;
-
-    private void Start()
+    public class LB_LogSaver : MonoBehaviour
     {
-        SetDataPath();
-        LoadLogHistory();
-    }
 
-    private void SetDataPath()
-    {
-        #if UNITY_EDITOR
+        private string logFilePath;
+
+        private string logHistory;
+
+        private void Start()
+        {
+            SetDataPath();
+            LoadLogHistory();
+        }
+
+        private void SetDataPath()
+        {
+#if UNITY_EDITOR
             logFilePath = Application.dataPath + "/LB_Logger_LogFile.txt";
-        #else
+#else
             logFilePath = Application.persistentDataPath + "/LB_Logger_LogFile.txt";
-        #endif
-    }
+#endif
+        }
 
-    private void LoadLogHistory()
-    {
-        using (FileStream fs = new FileStream(logFilePath, FileMode.Open))
+        private void LoadLogHistory()
         {
-            using (StreamReader reader = new StreamReader(fs))
+            using (FileStream fs = new FileStream(logFilePath, FileMode.Open))
             {
-                logHistory = reader.ReadToEnd();
+                using (StreamReader reader = new StreamReader(fs))
+                {
+                    logHistory = reader.ReadToEnd();
+                }
+            }
+        }
+
+        private void OnDestroy()
+        {
+            using (FileStream fs = new FileStream(logFilePath, FileMode.Create))
+            {
+                using (StreamWriter writer = new StreamWriter(fs))
+                {
+                    logHistory += DateTime.Now;
+                    logHistory += Environment.NewLine + "----------------" + Environment.NewLine;
+                    logHistory += LB_Logger.Instance.GetLogString();
+                    logHistory += Environment.NewLine + "----------------" + Environment.NewLine;
+                    writer.Write(logHistory);
+                }
+
             }
         }
     }
 
-    private void OnDestroy()
-    {
-        using (FileStream fs = new FileStream(logFilePath, FileMode.Create))
-        {
-            using (StreamWriter writer = new StreamWriter(fs))
-            {
-                logHistory += DateTime.Now;
-                logHistory += Environment.NewLine + "----------------" + Environment.NewLine;
-                logHistory += LB_Logger.Instance.GetLogString();
-                logHistory += Environment.NewLine + "----------------" + Environment.NewLine;
-                writer.Write(logHistory);
-            }
-
-        }
-    }
 }
