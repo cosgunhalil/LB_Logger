@@ -1,10 +1,13 @@
 ﻿
 namespace Helpers.Logger
 {
+    using System;
+    using System.Text;
     using UnityEngine;
 
     public class LB_LogPrinter : MonoBehaviour
     {
+        private StringBuilder stringBuilder = new StringBuilder();
 
         private void Awake()
         {
@@ -31,28 +34,34 @@ namespace Helpers.Logger
 
         private void PrintLogToConsole(string log, LogType logType)
         {
+            stringBuilder.Clear();
+            stringBuilder.Append(GetHeader(logType));
+            stringBuilder.Append(Environment.NewLine);
+            stringBuilder.Append(log);
+
+            Debug.Log(stringBuilder);
+        }
+
+        private string GetHeader(LogType logType)
+        {
             switch (logType)
             {
                 case LogType.UserInterface:
-                    Debug.Log("<color=#fe2d00>"+ log +"</color>");//todo move color codes to another container
-                    break;
+                    return "<color=" + LB_Colors.Green + "> [USER INTERFACE] </color>";
                 case LogType.Gameplay:
-                    Debug.Log("<color=#fe2d00>" + log + "</color>");
-                    break;
+                    return "<color=" + LB_Colors.Orange + "> [GAMEPLAY] </color>";
                 case LogType.Server:
-                    Debug.Log("<color=#fe2d00>" + log + "</color>");
-                    break;
+                    return "<color=" + LB_Colors.DeapSkyBlue + "> [SERVER] </color>";
                 case LogType.Warning:
-                    Debug.Log("<color=#fe2d00>" + log + "</color>");
-                    break;
+                    return "<color=" + LB_Colors.Yellow + "> [WARNING] </color>";
                 case LogType.Common:
-                    Debug.Log("<color=#fe2d00>" + log + "</color>");
-                    break;
+                    return "<color=" + LB_Colors.Purple + "> [COMMON] </color>";
+                case LogType.Error:
+                    return "<color=" + LB_Colors.Red + "> [COMMON] </color>";
                 default:
-                    break;
+                    return "<color=blue> [DEFAULT] </color>";
             }
         }
-
     }
 
 }

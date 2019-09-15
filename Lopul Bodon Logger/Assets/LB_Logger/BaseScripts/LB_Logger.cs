@@ -35,7 +35,8 @@ namespace Helpers.Logger
             { LogType.Gameplay, true },
             { LogType.Server, true },
             { LogType.UserInterface, true },
-            { LogType.Warning, true }
+            { LogType.Warning, true },
+            { LogType.Error, true }
         };
 
         public void PrintLog(string log, LogType logType)
@@ -59,7 +60,8 @@ namespace Helpers.Logger
         Gameplay,
         Server,
         Warning,
-        Common
+        Common,
+        Error
     }
 
 }
