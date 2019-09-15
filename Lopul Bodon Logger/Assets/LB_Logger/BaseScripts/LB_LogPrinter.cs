@@ -57,7 +57,7 @@ namespace Helpers.Logger
                 case LogType.Common:
                     return "<color=" + LB_Colors.Purple + "> [COMMON] </color>";
                 case LogType.Error:
-                    return "<color=" + LB_Colors.Red + "> [COMMON] </color>";
+                    return "<color=" + LB_Colors.Red + "> [ERROR] </color>";
                 default:
                     return "<color=blue> [DEFAULT] </color>";
             }
