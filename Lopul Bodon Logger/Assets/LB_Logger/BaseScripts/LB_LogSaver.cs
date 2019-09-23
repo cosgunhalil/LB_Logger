@@ -20,7 +20,7 @@ namespace Helpers.Logger
         {
             logHistory = new StringBuilder();
 
-            using (FileStream fs = new FileStream(GetLogFilePath(), FileMode.Open))
+            using (FileStream fs = new FileStream(GetLogFilePath(), FileMode.OpenOrCreate))
             {
                 using (StreamReader reader = new StreamReader(fs))
                 {
@@ -40,7 +40,11 @@ namespace Helpers.Logger
 
         private void AddLog(string log, LogType logType)
         {
-            //todo add log to logHistory - use queue!
+            logHistory.Append(Environment.NewLine);
+
+            logHistory.Append(System.DateTime.UtcNow.ToString() + " - ");
+            logHistory.Append(logType.ToString() + " - ");
+            logHistory.Append(log);
         }
 
         private void OnDestroy()
@@ -56,9 +60,9 @@ namespace Helpers.Logger
             {
                 using (StreamWriter writer = new StreamWriter(fs))
                 {
-                    logHistory.Append(DateTime.Now);
                     logHistory.Append(Environment.NewLine + "----------------" + Environment.NewLine);
-                    //logHistory.Append(LB_Logger.Instance.GetLogString()); todo get log history
+                    logHistory.Append(DateTime.UtcNow);
+                    logHistory.Append(logHistory);
                     logHistory.Append(Environment.NewLine + "----------------" + Environment.NewLine);
                     writer.Write(logHistory);
                 }

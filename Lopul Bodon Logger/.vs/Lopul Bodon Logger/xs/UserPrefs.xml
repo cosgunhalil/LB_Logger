@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{8BE63688-0124-7E35-1535-CAEDE85FEAA0}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LB_Logger/Helpers/LB_Colors.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LB_Logger/BaseScripts/LB_LogSaver.cs">
     <Files>
-      <File FileName="Assets/LB_Logger/BaseScripts/LB_Logger.cs" Line="49" Column="33" />
+      <File FileName="Assets/LB_Logger/BaseScripts/LB_Logger.cs" Line="63" Column="13" />
       <File FileName="Assets/LB_Logger/BaseScripts/LB_LoggerMonitor.cs" />
-      <File FileName="Assets/LB_Logger/BaseScripts/LB_LogSaver.cs" />
+      <File FileName="Assets/LB_Logger/BaseScripts/LB_LogSaver.cs" Line="59" Column="31" />
       <File FileName="Assets/LB_Logger/Sample/SampleLoggerObject.cs" />
-      <File FileName="Assets/LB_Logger/BaseScripts/LB_LogPrinter.cs" Line="37" Column="63" />
-      <File FileName="Assets/LB_Logger/Helpers/LB_Colors.cs" Line="19" Column="1" />
+      <File FileName="Assets/LB_Logger/BaseScripts/LB_LogPrinter.cs" />
+      <File FileName="Assets/LB_Logger/Helpers/LB_Colors.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3eee701e-02fa-405e-9a5d-7eb87b2d2e50" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a0b76ec9-9bea-4795-9e62-1bf3a37cd46e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
