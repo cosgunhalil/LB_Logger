@@ -5,8 +5,6 @@ namespace Helpers.Logger
 
     public class LB_LoggerMonitor : MonoBehaviour
     {
-        public TMPro.TextMeshProUGUI LogTextContainer;
-
         void OnEnable()
         {
             LB_Logger.Instance.OnLogPrint += MonitorLog;
@@ -19,7 +17,7 @@ namespace Helpers.Logger
 
         private void MonitorLog(string log, LogType logType)
         {
-            LogTextContainer.text = log;
+            
         }
     }
 
