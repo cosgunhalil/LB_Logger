@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{8BE63688-0124-7E35-1535-CAEDE85FEAA0}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LB_Logger/BaseScripts/LogMonitor/LogItemView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LB_Logger/BaseScripts/LogMonitor/LogFactory.cs">
     <Files>
-      <File FileName="Assets/LB_Logger/BaseScripts/LogMonitor/LogItemView.cs" Line="26" Column="18" />
-      <File FileName="Assets/LB_Logger/Helpers/LB_Colors.cs" Line="7" Column="49" />
+      <File FileName="Assets/LB_Logger/BaseScripts/LogMonitor/LogItemView.cs" Line="3" Column="23" />
+      <File FileName="Assets/LB_Logger/BaseScripts/LogMonitor/LogFactory.cs" Line="7" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

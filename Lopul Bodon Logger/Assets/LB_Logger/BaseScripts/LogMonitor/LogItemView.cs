@@ -19,9 +19,9 @@
             logContainer.text = data.log;
         }
 
-        private void SetColor(Color color)
+        private void SetColor(LogType logType)
         {
-            backgroundImage.color = color;
+            //todo think: where is the correct place for set color routine? 
         }
     }
 
@@ -29,6 +29,7 @@
     {
         public readonly string Id;
         public readonly string log;
+        public readonly LogType logType;
     }
 
 }
