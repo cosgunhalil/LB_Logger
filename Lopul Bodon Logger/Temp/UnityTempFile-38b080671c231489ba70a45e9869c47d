@@ -301,9 +301,11 @@
 /define:ENABLE_VSTU
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
+"Assets/LB_AnchorHandler/LB_AnchorHandler.cs"
 "Assets/LB_Logger/BaseScripts/LB_Logger.cs"
-"Assets/LB_Logger/BaseScripts/LB_LoggerMonitor.cs"
 "Assets/LB_Logger/BaseScripts/LB_LogPrinter.cs"
 "Assets/LB_Logger/BaseScripts/LB_LogSaver.cs"
+"Assets/LB_Logger/BaseScripts/LogMonitor/LB_LoggerMonitor.cs"
+"Assets/LB_Logger/BaseScripts/LogMonitor/LogItemView.cs"
 "Assets/LB_Logger/Helpers/LB_Colors.cs"
 "Assets/LB_Logger/Sample/SampleLoggerObject.cs"
