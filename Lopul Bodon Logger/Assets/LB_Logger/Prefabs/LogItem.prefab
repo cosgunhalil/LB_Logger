@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6115630753027355283}
   - component: {fileID: 8821064986205084954}
   - component: {fileID: 6863089492525073433}
+  - component: {fileID: 8381184501767363410}
   m_Layer: 5
   m_Name: LogItem
   m_TagString: Untagged
@@ -75,6 +76,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &8381184501767363410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5834178347401942396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a22f2f77004849cf84503ffe3b0a554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idContainer: {fileID: 0}
+  logContainer: {fileID: 1990263531733571022}
+  backgroundImage: {fileID: 0}
 --- !u!1 &8328952099619840845
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.03610094, y: 0.118839666}
   m_AnchorMax: {x: 0.9583375, y: 0.8574548}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -0.0000038146973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1208574391268830879

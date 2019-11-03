@@ -4,17 +4,18 @@
     using TMPro;
     using UnityEngine.UI;
 
+    [RequireComponent(typeof(Image))]
     public class LogItemView : MonoBehaviour
     {
         [SerializeField]
         private TextMeshProUGUI idContainer;
         [SerializeField]
         private TextMeshProUGUI logContainer;
-        [SerializeField]
         private Image backgroundImage;
 
         public void Setup(ref LogItemData data)
         {
+            backgroundImage = GetComponent<Image>();
             idContainer.text = data.Id;
             logContainer.text = data.log;
         }
