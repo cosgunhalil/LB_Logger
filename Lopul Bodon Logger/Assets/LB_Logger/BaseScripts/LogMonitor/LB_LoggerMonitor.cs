@@ -1,6 +1,7 @@
 ﻿
 namespace Helpers.Logger
 {
+    using System;
     using System.Collections.Generic;
     using System.Text;
     using UnityEngine;
@@ -20,19 +21,21 @@ namespace Helpers.Logger
 
             logList = new List<string>();
             logFactory = GetComponent<LogFactory>();
-        }
 
-        void OnEnable()
-        {
             LB_Logger.Instance.OnLogPrint += MonitorLog;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             LB_Logger.Instance.OnLogPrint -= MonitorLog;
         }
 
         private void MonitorLog(string log, LogType logType)
+        {
+            pushLog(log, logType);
+        }
+
+        private void pushLog(string log, LogType logType)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("[");
