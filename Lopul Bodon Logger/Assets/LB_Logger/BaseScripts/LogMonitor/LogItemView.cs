@@ -17,7 +17,7 @@
         {
             backgroundImage = GetComponent<Image>();
             idContainer.text = data.Id;
-            logContainer.text = data.log;
+            logContainer.text = data.Log;
         }
 
         private void SetColor(LogType logType)
@@ -29,8 +29,15 @@
     public struct LogItemData
     {
         public readonly string Id;
-        public readonly string log;
-        public readonly LogType logType;
+        public readonly string Log;
+        public readonly LogType Type;
+
+        public LogItemData(string id, string log, LogType logType)
+        {
+            Id = id;
+            Log = log;
+            Type = logType;
+        }
     }
 
 }
