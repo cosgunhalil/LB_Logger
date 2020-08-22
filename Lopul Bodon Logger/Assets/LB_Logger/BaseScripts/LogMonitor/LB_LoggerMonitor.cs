@@ -10,7 +10,7 @@ namespace Helpers.Logger
     public class LB_LoggerMonitor : MonoBehaviour
     {
         private LogFactory logFactory;
-        private List<string> logList;
+        private Queue<string> logList;
 
         private const int logsPerPage = 10;
         private int startIndexOfThePage;
@@ -19,7 +19,7 @@ namespace Helpers.Logger
         {
             startIndexOfThePage = 0;
 
-            logList = new List<string>();
+            logList = new Queue<string>();
             logFactory = GetComponent<LogFactory>();
 
             LB_Logger.Instance.OnLogPrint += MonitorLog;
@@ -43,7 +43,7 @@ namespace Helpers.Logger
             stringBuilder.Append("] ");
             stringBuilder.Append(log);
 
-            logList.Add(stringBuilder.ToString());
+            logList.Enqueue(stringBuilder.ToString());
         }
     }
 

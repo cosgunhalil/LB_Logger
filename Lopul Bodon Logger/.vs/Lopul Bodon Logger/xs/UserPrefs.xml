@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{8BE63688-0124-7E35-1535-CAEDE85FEAA0}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LB_Logger/BaseScripts/LB_LogPrinter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LB_Logger/BaseScripts/LogMonitor/LogItemView.cs">
     <Files>
-      <File FileName="Assets/LB_Logger/BaseScripts/LogMonitor/LogItemView.cs" Line="1" Column="1" />
-      <File FileName="Assets/LB_Logger/BaseScripts/LogMonitor/LB_LoggerMonitor.cs" Line="15" Column="38" />
+      <File FileName="Assets/LB_Logger/BaseScripts/LogMonitor/LogItemView.cs" Line="20" Column="42" />
+      <File FileName="Assets/LB_Logger/BaseScripts/LogMonitor/LB_LoggerMonitor.cs" />
       <File FileName="Assets/LB_Logger/BaseScripts/LB_Logger.cs" />
       <File FileName="Assets/LB_Logger/BaseScripts/LB_LogPrinter.cs" Line="8" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2d92b54d-8aec-4cc6-b369-3d11541ee2f4" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5c48bc9f-f5ea-4a58-8266-50b6515151fd" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
